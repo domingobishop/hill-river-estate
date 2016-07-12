@@ -15,12 +15,6 @@ get_header(); ?>
                             <article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
                                 <div class="entry-content">
                                     <?php the_content(); ?>
-                                    <?php $awardImage = get_post_meta( $post->ID, 'award_image', true );
-                                    if ( $awardImage ) { ?>
-                                        <div class="award-image">
-                                                <img src="<?php echo $awardImage; ?>" alt="Award" class="img-responsive">
-                                        </div>
-                                    <?php } ?>
                                 </div>
                             </article>
                         <?php endwhile;
@@ -36,18 +30,22 @@ get_header(); ?>
                     <div class="col-md-4">
                         <div class="bc-box">
                             <article>
-                                <h5>About</h5>
                                 <?php
                                 $your_query = new WP_Query( 'pagename=about' );
                                 while ( $your_query->have_posts() ) : $your_query->the_post(); ?>
                                 <h3 class="entry-title">
                                     <a href="<?php the_permalink(); ?>" rel="bookmark">
-                                        Heathcote Winery
+                                        our range
                                     </a>
                                 </h3>
                                 <div class="entry-summary">
-                                        <?php echo excerpt(20) ;
-                                    endwhile;
+                                        <p><?php echo excerpt(20) ; ?></p>
+                                    <p>
+                                    <a href="<?php the_permalink(); ?>" class="btn btn-default" rel="bookmark">
+                                        learn more
+                                    </a>
+                                    </p>
+                                    <?php endwhile;
                                     wp_reset_postdata();
                                     ?>
                                 </div>
@@ -56,44 +54,48 @@ get_header(); ?>
                     </div>
                     <div class="col-md-4">
                         <div class="bc-box">
-                            <?php if (have_posts()) : ?>
-                                <?php query_posts('showposts=1'); ?>
-                                <?php while (have_posts()) : the_post(); ?>
-                                    <article id="post-<?php the_ID(); ?>">
-                                        <h5>News</h5>
-                                        <h3 class="entry-title">
-                                            <a href="/index.php/news/" rel="bookmark">
-                                                <?php the_title(); ?>
-                                            </a>
-                                        </h3>
-                                        <div class="entry-summary">
-                                            <?php echo excerpt(20) ; ?>
-                                        </div>
-                                    </article>
-                                <?php endwhile; ?>
-                            <?php else : ?>
-                                <h3>No content</h3>
+                            <article>
                                 <?php
-                            endif;
-                            wp_reset_postdata();
-                            ?>
+                                $your_query = new WP_Query( 'pagename=about' );
+                                while ( $your_query->have_posts() ) : $your_query->the_post(); ?>
+                                <h3 class="entry-title">
+                                    <a href="<?php the_permalink(); ?>" rel="bookmark">
+                                        what we do
+                                    </a>
+                                </h3>
+                                <div class="entry-summary">
+                                    <p><?php echo excerpt(20) ; ?></p>
+                                    <p>
+                                    <a href="<?php the_permalink(); ?>" class="btn btn-default" rel="bookmark">
+                                        learn more
+                                    </a>
+                                    </p>
+                                    <?php endwhile;
+                                    wp_reset_postdata();
+                                    ?>
+                                </div>
+                            </article>
                         </div>
                     </div>
                     <div class="col-md-4">
                         <div class="bc-box">
                             <article>
-                                <h5>Members</h5>
                                 <?php
-                                $your_query = new WP_Query( 'pagename=Wine club' );
+                                $your_query = new WP_Query( 'pagename=visit-us' );
                                 while ( $your_query->have_posts() ) : $your_query->the_post(); ?>
                                 <h3 class="entry-title">
                                     <a href="<?php the_permalink(); ?>" rel="bookmark">
-                                        Join our Wine Club
+                                        visit us
                                     </a>
                                 </h3>
                                 <div class="entry-summary">
-                                        <?php echo excerpt(20) ;
-                                    endwhile;
+                                        <p><?php echo excerpt(20) ; ?></p>
+                                    <p>
+                                    <a href="<?php the_permalink(); ?>" class="btn btn-default" rel="bookmark">
+                                        learn more
+                                    </a>
+                                    </p>
+                                    <?php endwhile;
                                     wp_reset_postdata();
                                     ?>
                                 </div>

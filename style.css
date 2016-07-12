@@ -30,10 +30,10 @@ html, button, input, select, textarea {
 h1, h2, h3, h4, h5, h6 {
     font-family: 'Lora', serif;
     font-weight: 400;
-    color: #cc9966;
+    color: #dd3333;
 }
 a {
-    color: #cc9966;
+    color: #dd3333;
 }
 a:hover, a:focus {
     color: #222;
@@ -105,29 +105,25 @@ h1, h2, h3, h4, p, ul, li, ol, dl, blockquote, .post-statement, .statement {
     font-weight: 400;
     text-transform: uppercase;
     border-radius: 0;
-    background: transparent;
-}
-.navbar .container {
-    border-bottom: 1px solid #ededed;
-    border-top: 1px solid #ededed;
+    background: #444;
 }
 .navbar-default .navbar-nav > li > a {
-    color: #cc9966;
+    color: #eee;
 }
 .navbar-default .navbar-nav>li>a:hover, .navbar-default .navbar-nav>li>a:focus {
-    color: #222;
+    color: #dd3333;
 }
 .navbar-default a.navbar-brand {
-    color: #cc9966;
+    color: #eee;
     text-transform: none;
     font-family: 'Lora', serif;
     font-weight: 400;
 }
 .navbar-default a:hover.navbar-brand {
-    color: #222;
+    color: #dd3333;
 }
 .navbar-default .navbar-toggle {
-    background: #222;
+    background: #dd3333;
 }
 
 /**
@@ -135,6 +131,10 @@ h1, h2, h3, h4, p, ul, li, ol, dl, blockquote, .post-statement, .statement {
  * ----------------------------------------------------------------------------
  */
 
+.bc-head {
+    background-color: #282a2e;
+    color: #eee;
+}
 .page header, .single header {
     margin-bottom: 2em;
 }
@@ -145,33 +145,32 @@ h1, h2, h3, h4, p, ul, li, ol, dl, blockquote, .post-statement, .statement {
  */
 
 footer {
+    background-color: #282a2e;
+    color: #eee;
     padding: 1em 0;
 }
 footer .bc-info {
     padding: 1em;
 }
+footer a {
+    color: #eee;
+}
+footer a:hover {
+    color: #dd3333;
+}
 footer ul {
     list-style-type: none;
     padding: 0;
 }
-footer .container {
-    margin-top: 1em;
-    padding-top: 1em;
-    background: url("img/bg.png") top center no-repeat;
-    background-size: 853px 259px;
-}
-footer h4 {
-    color: #222;
+footer h3, footer h4 {
+    color: #eee;
 }
 
 /**
  * Index
  * ----------------------------------------------------------------------------
  */
-header {
-    background: url("img/bg.png") center center no-repeat;
-    background-size: 853px 259px;
-}
+
 .bc-banner {
     position: relative;
 }
@@ -189,6 +188,9 @@ header {
     box-shadow: 0px 5px 14px #ddd;
     min-height: 240px;
     margin-bottom: 1.6em;
+}
+.bc-box .btn {
+    width: 100%;
 }
 .carousel {
     margin: 1.6em 0;
