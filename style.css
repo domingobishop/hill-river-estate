@@ -145,17 +145,25 @@ h1, h2, h3, h4, p, ul, li, ol, dl, blockquote, .post-statement, .statement {
  */
 
 footer {
+    background-color: #282a2e;
+    color: #eee;
     padding: 1em 0;
 }
 footer .bc-info {
     padding: 1em;
 }
+footer a {
+    color: #eee;
+}
+footer a:hover {
+    color: #dd3333;
+}
 footer ul {
     list-style-type: none;
     padding: 0;
 }
-footer h4 {
-    color: #222;
+footer h3, footer h4 {
+    color: #eee;
 }
 
 /**
