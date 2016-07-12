@@ -20,15 +20,12 @@
         <div class="bc-banner">
             <div class="container">
                 <div class="row">
-                    <div class="col-md-12 text-center">
+                    <div class="col-md-6 text-right">
                         <a href="<?php bloginfo('siteurl'); ?>/"
                            title="<?php echo esc_attr(get_bloginfo('name', 'display')); ?>">
-                            <img src="<?php echo get_template_directory_uri(); ?>/img/logo.png" alt="Heathcote Winery" class="img-responsive">
+                            <img src="<?php echo get_template_directory_uri(); ?>/img/logo.png" alt="Hill River Clare Estate" class="img-responsive">
                         </a>
                     </div>
-                </div>
-                <div class="col-md-12 text-right">
-                    <p>since 1981</p>
                 </div>
             </div>
         </div>
@@ -42,7 +39,7 @@
                     </button>
                     <a class="navbar-brand" href="<?php bloginfo('siteurl'); ?>/"
                        title="<?php echo esc_attr(get_bloginfo('name', 'display')); ?>">
-                        Heathcote Winery
+                        Hill River Clare Estate
                     </a>
                 </div>
 
