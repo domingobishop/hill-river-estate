@@ -20,11 +20,18 @@
         <div class="bc-banner">
             <div class="container">
                 <div class="row">
-                    <div class="col-md-6 text-right">
+                    <div class="col-md-6 col-banner">
                         <a href="<?php bloginfo('siteurl'); ?>/"
                            title="<?php echo esc_attr(get_bloginfo('name', 'display')); ?>">
                             <img src="<?php echo get_template_directory_uri(); ?>/img/logo.png" alt="Hill River Clare Estate" class="img-responsive">
                         </a>
+                    </div>
+                    <div class="col-md-6 col-banner text-right">
+                        <h3>
+                            <a href="tel:+61888439086" title="Call us">
+                                +61 8 8843 9086
+                            </a>
+                        </h3>
                     </div>
                 </div>
             </div>

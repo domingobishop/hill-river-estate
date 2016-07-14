@@ -175,11 +175,26 @@ footer h3, footer h4 {
     position: relative;
 }
 .bc-banner img {
-    margin: 2em auto;
+    margin: 2em 0;
+}
+.bc-banner a:hover {
+    color: #eee;
 }
 .tag-line p {
     margin: 1em 0;
     color: #e51b15;
+}
+@media (min-width: 992px) {
+    .bc-banner .row {
+        display: table;
+        table-layout: fixed;
+        width: 100%;
+    }
+    .bc-banner .row .col-banner {
+        display: table-cell;
+        float: none;
+        vertical-align: middle;
+    }
 }
 .bc-box {
     border: 1px #ddd solid;
@@ -203,10 +218,6 @@ footer h3, footer h4 {
     font-weight: 700;
     color: #fff;
     text-shadow: 5px 5px 5px #222;
-}
-.home .entry-content {
-    min-height: 420px;
-    background-color: #eee;
 }
 
 
