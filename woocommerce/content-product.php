@@ -44,6 +44,12 @@ if ( empty( $product ) || ! $product->is_visible() ) {
 	 */
 	do_action( 'woocommerce_before_shop_loop_item_title' );
 
+	?>
+
+	<img src="<?php echo get_template_directory_uri(); ?>/img/logo-sm.png" alt="Hill River Clare Estate" class="logo img-responsive">
+
+	<?php
+
 	/**
 	 * woocommerce_shop_loop_item_title hook.
 	 *

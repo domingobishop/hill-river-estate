@@ -143,7 +143,7 @@ function meta_boxes() {
         $home_box = new create_meta_box( $meta_box );
     }
 }
-add_action( 'init', 'meta_boxes' );
+// add_action( 'init', 'meta_boxes' );
 
 // Creates meta boxes from $meta_boxes[] = array()
 // See http://www.deluxeblogtips.com/2010/05/howto-meta-box-wordpress.html for more info
@@ -241,4 +241,16 @@ class create_meta_box {
     }
 }
 
+add_action( 'after_setup_theme', 'woocommerce_support' );
+function woocommerce_support() {
+    add_theme_support( 'woocommerce' );
+}
 
+add_action('woocommerce_after_shop_loop_item_title','woocommerce_template_single_excerpt', 5);
+
+
+add_filter( 'woocommerce_product_tabs', 'wcs_woo_remove_reviews_tab', 98 );
+function wcs_woo_remove_reviews_tab($tabs) {
+    unset($tabs['reviews']);
+    return $tabs;
+}
