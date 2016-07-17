@@ -254,3 +254,10 @@ function wcs_woo_remove_reviews_tab($tabs) {
     unset($tabs['reviews']);
     return $tabs;
 }
+
+// Change the description tab heading to product name
+add_filter( 'woocommerce_product_description_heading', 'wc_change_product_description_tab_heading', 10, 1 );
+function wc_change_product_description_tab_heading( $title ) {
+    global $post;
+    return $post->post_title;
+}

@@ -1,3 +1,4 @@
+</main>
 <footer id="footer" class="bc-footer">
   <div class="container">
     <div class="row">
@@ -11,7 +12,7 @@
         <p>
           PO Box 623, Clare SA 5453<br>
           406 Quarry Road, Clare<br>
-          T: (08) 8843 9086<br>
+          (08) 8843 9086<br>
           <a href="mailto:cellardoor@hrhay.com.au">Email us</a><br>
           Copyright © <?php echo date("Y"); ?> <br>
           <small>Website by <a href="http://creatistic.com.au/" target="_blank">Creatistic</a></small>

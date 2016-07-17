@@ -109,9 +109,15 @@ h1, h2, h3, h4, p, ul, li, ol, dl, blockquote, .post-statement, .statement {
 }
 .navbar-default .navbar-nav > li > a {
     color: #eee;
+    padding-bottom: 10px;
+    border-bottom: solid 9.5px #444;
+}
+.navbar-default .navbar-nav > li.current-menu-item > a {
+    border-bottom: solid 9.5px #dd3333;
 }
 .navbar-default .navbar-nav>li>a:hover, .navbar-default .navbar-nav>li>a:focus {
     color: #dd3333;
+    border-bottom: solid 9.5px #dd3333;
 }
 .navbar-default a.navbar-brand {
     color: #eee;
@@ -134,9 +140,6 @@ h1, h2, h3, h4, p, ul, li, ol, dl, blockquote, .post-statement, .statement {
 .bc-head {
     background-color: #282a2e;
     color: #eee;
-}
-header {
-    margin-bottom: 2em;
 }
 
 /**
@@ -167,7 +170,7 @@ footer h3, footer h4 {
 }
 
 /**
- * Index
+ * Home
  * ----------------------------------------------------------------------------
  */
 
@@ -183,6 +186,28 @@ footer h3, footer h4 {
 .tag-line p {
     margin: 1em 0;
     color: #e51b15;
+}
+.home .bc-main {
+    background: url('img/home-bj.jpg') no-repeat;
+    background-size: cover;
+}
+.overlay {
+    background: -webkit-linear-gradient(top, rgba(0,0,0,0), rgba(0,0,0,1)); /* For Safari 5.1 to 6.0 */
+    background: -o-linear-gradient(top, rgba(0,0,0,0), rgba(0,0,0,1)); /* For Opera 11.1 to 12.0 */
+    background: -moz-linear-gradient(top, rgba(0,0,0,0), rgba(0,0,0,1)); /* For Firefox 3.6 to 15 */
+    background: linear-gradient(to top, rgba(0,0,0,0), rgba(0,0,0,1)); /* Standard syntax (must be last) */
+}
+.home .intro {
+    margin-bottom: 5em;
+}
+.home .intro h1 {
+    font-size: 3.2em;
+    color: #fff;
+}
+.home .intro p {
+    font-size: 1.6em;
+    color: #fff;
+    margin: 1em 12%;
 }
 @media (min-width: 992px) {
     .bc-banner .row {
@@ -200,9 +225,10 @@ footer h3, footer h4 {
     border: 1px #ddd solid;
     border-radius: 3px;
     padding: 1em;
-    box-shadow: 0px 5px 14px #ddd;
+    box-shadow: 0px 5px 14px #444;
     min-height: 240px;
     margin-bottom: 1.6em;
+    background-color: #fff;
 }
 .bc-box .btn {
     width: 100%;
@@ -226,21 +252,8 @@ footer h3, footer h4 {
  * ----------------------------------------------------------------------------
  */
 
-.entry-content {
-    position: relative;
-}
-.award-image {
-    position: absolute;
-    top: 10px;
-    right: 10px;
-    max-width: 180px;
-    box-shadow: 0 3px 4px #000;
-}
-.page-content {
-    margin-bottom: 1em;
-}
-.bc-content {
-    margin-bottom: 2em;
+.content {
+    padding: 2em 0;
 }
 .category-wine .entry-thumbnail {
     float: left;

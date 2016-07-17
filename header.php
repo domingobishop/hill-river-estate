@@ -60,3 +60,5 @@
         </nav>
     </header>
     <!-- #head -->
+
+    <main id="main" class="bc-main" role="main">
