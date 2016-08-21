@@ -16,6 +16,7 @@
 </head>
 
 <body <?php body_class(); ?>>
+    <div class="bg-img">
     <header id="head" class="bc-head">
         <div class="bc-banner">
             <div class="container">
@@ -26,10 +27,10 @@
                             <img src="<?php echo get_template_directory_uri(); ?>/img/logo.png" alt="Hill River Clare Estate" class="img-responsive">
                         </a>
                     </div>
-                    <div class="col-md-6 col-banner text-right">
+                    <div class="col-md-6 col-banner text-right hidden-xs hidden-sm">
                         <h3>
                             <a href="tel:+61888439086" title="Call us">
-                                +61 8 8843 9086
+                                Call us (08) 8843 9086
                             </a>
                         </h3>
                     </div>
@@ -44,12 +45,11 @@
                             data-target="#bs-example-navbar-collapse-1"><span class="sr-only">Toggle navigation</span>
                         <span class="icon-bar"></span> <span class="icon-bar"></span> <span class="icon-bar"></span>
                     </button>
-                    <a class="navbar-brand" href="<?php bloginfo('siteurl'); ?>/"
+                    <a class="navbar-brand hidden-md hidden-lg" href="<?php bloginfo('siteurl'); ?>/"
                        title="<?php echo esc_attr(get_bloginfo('name', 'display')); ?>">
-                        Hill River Clare Estate
+                        HOME
                     </a>
                 </div>
-
                 <!-- Collect the nav links, forms, and other content for toggling -->
                 <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
                     <?php wp_nav_menu(array('menu' => 'Menu 1', 'items_wrap' => '<ul class="nav navbar-nav navbar-left" role="menu">%3$s</ul>', 'container' => false)); ?>

@@ -6,7 +6,7 @@
 get_header(); ?>
 
 
-    <div id="content" class="overlay">
+    <div id="content">
         <section class="page-content content">
             <div class="container">
                 <div class="row">
@@ -27,12 +27,17 @@ get_header(); ?>
         <section>
             <div class="container">
                 <div class="row">
+                    <?php
+                    $query = new WP_Query( array(
+                        'post_type' => 'page',
+                        'category_name' => 'home',
+                        'orderby' => 'menu_order'
+                        // 'cat' => 34
+                    ) );
+                    while ( $query->have_posts() ) : $query->the_post(); ?>
                     <div class="col-md-4">
                         <div class="bc-box">
                             <article>
-                                <?php
-                                $your_query = new WP_Query( 'pagename=about' );
-                                while ( $your_query->have_posts() ) : $your_query->the_post(); ?>
                                 <?php if (has_post_thumbnail() && !post_password_required() && !is_attachment()) : ?>
                                     <div class="entry-thumbnail">
                                         <?php the_post_thumbnail('full', array('class' => 'img-responsive')); ?>
@@ -40,83 +45,23 @@ get_header(); ?>
                                 <?php endif; ?>
                                 <h3 class="entry-title">
                                     <a href="<?php the_permalink(); ?>" rel="bookmark">
-                                        our range
-                                    </a>
-                                </h3>
-                                <div class="entry-summary">
-                                        <p><?php echo excerpt(16) ; ?></p>
-                                    <p>
-                                    <a href="<?php the_permalink(); ?>" class="btn btn-default" rel="bookmark">
-                                        learn more
-                                    </a>
-                                    </p>
-                                    <?php endwhile;
-                                    wp_reset_postdata();
-                                    ?>
-                                </div>
-                            </article>
-                        </div>
-                    </div>
-                    <div class="col-md-4">
-                        <div class="bc-box">
-                            <article>
-                                <?php
-                                $your_query = new WP_Query( 'pagename=about' );
-                                while ( $your_query->have_posts() ) : $your_query->the_post(); ?>
-                                <?php if (has_post_thumbnail() && !post_password_required() && !is_attachment()) : ?>
-                                    <div class="entry-thumbnail">
-                                        <?php the_post_thumbnail('full', array('class' => 'img-responsive')); ?>
-                                    </div>
-                                <?php endif; ?>
-                                <h3 class="entry-title">
-                                    <a href="<?php the_permalink(); ?>" rel="bookmark">
-                                        what we do
+                                        <?php the_title(); ?>
                                     </a>
                                 </h3>
                                 <div class="entry-summary">
                                     <p><?php echo excerpt(16) ; ?></p>
                                     <p>
-                                    <a href="<?php the_permalink(); ?>" class="btn btn-default" rel="bookmark">
-                                        learn more
-                                    </a>
+                                        <a href="<?php the_permalink(); ?>" class="btn btn-default" rel="bookmark">
+                                            learn more
+                                        </a>
                                     </p>
-                                    <?php endwhile;
-                                    wp_reset_postdata();
-                                    ?>
                                 </div>
                             </article>
                         </div>
                     </div>
-                    <div class="col-md-4">
-                        <div class="bc-box">
-                            <article>
-                                <?php
-                                $your_query = new WP_Query( 'pagename=visit-us' );
-                                while ( $your_query->have_posts() ) : $your_query->the_post(); ?>
-                                <?php if (has_post_thumbnail() && !post_password_required() && !is_attachment()) : ?>
-                                    <div class="entry-thumbnail">
-                                        <?php the_post_thumbnail('full', array('class' => 'img-responsive')); ?>
-                                    </div>
-                                <?php endif; ?>
-                                <h3 class="entry-title">
-                                    <a href="<?php the_permalink(); ?>" rel="bookmark">
-                                        visit us
-                                    </a>
-                                </h3>
-                                <div class="entry-summary">
-                                        <p><?php echo excerpt(16) ; ?></p>
-                                    <p>
-                                    <a href="<?php the_permalink(); ?>" class="btn btn-default" rel="bookmark">
-                                        learn more
-                                    </a>
-                                    </p>
-                                    <?php endwhile;
-                                    wp_reset_postdata();
-                                    ?>
-                                </div>
-                            </article>
-                        </div>
-                    </div>
+                    <?php endwhile;
+                    wp_reset_postdata();
+                    ?>
                 </div>
             </div>
         </section>

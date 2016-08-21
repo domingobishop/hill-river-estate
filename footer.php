@@ -1,4 +1,5 @@
 </main>
+</div>
 <footer id="footer" class="bc-footer">
   <div class="container">
     <div class="row">
@@ -7,9 +8,9 @@
     <div class="row bc-info">
       <div class="col-lg-12 text-center">
         <h3>Jaeschkes Hill River Clare Estate</h3>
-        <p><a href="#" target="_blank"><img src="<?php bloginfo('stylesheet_directory'); ?>/img/facebook.png"></a>
-          <a href="#" target="_blank"><img src="<?php bloginfo('stylesheet_directory'); ?>/img/twitter.png"></a></p>
-        <p>
+        <!--<p><a href="#" target="_blank"><img src="<?php /*bloginfo('stylesheet_directory'); */?>/img/facebook.png"></a>
+          <a href="#" target="_blank"><img src="<?php /*bloginfo('stylesheet_directory'); */?>/img/twitter.png"></a></p>
+        <p>-->
           PO Box 623, Clare SA 5453<br>
           406 Quarry Road, Clare<br>
           (08) 8843 9086<br>
@@ -25,7 +26,10 @@
 
 <?php wp_footer(); ?>
 
-<!-- BC JavaScript -->
+<!-- JavaScript -->
+<script src="<?php echo get_template_directory_uri(); ?>/js/jquery.js"></script>
+<script src="<?php echo get_template_directory_uri(); ?>/js/bootstrap.min.js"></script>
 <script src="<?php echo get_template_directory_uri(); ?>/js/bc.js"></script>
+
 </body>
 </html>

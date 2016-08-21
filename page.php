@@ -12,11 +12,6 @@
                                         <?php the_title(); ?>
                                     </h1>
                                 </div>
-                                <?php if (has_post_thumbnail() && !post_password_required() && !is_attachment()) : ?>
-                                    <div class="entry-thumbnail">
-                                            <?php the_post_thumbnail('full', array('class' => 'img-responsive')); ?>
-                                    </div>
-                                <?php endif; ?>
                                 <div class="entry-content">
                                     <?php the_content(); ?>
                                 </div>
