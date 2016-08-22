@@ -31,8 +31,8 @@ get_header(); ?>
                     $query = new WP_Query( array(
                         'post_type' => 'page',
                         'category_name' => 'home',
-                        'orderby' => 'menu_order'
-                        // 'cat' => 34
+                        'orderby' => 'menu_order title',
+                        'order'   => 'ASC'
                     ) );
                     while ( $query->have_posts() ) : $query->the_post(); ?>
                     <div class="col-md-4">
@@ -49,7 +49,7 @@ get_header(); ?>
                                     </a>
                                 </h3>
                                 <div class="entry-summary">
-                                    <p><?php echo excerpt(16) ; ?></p>
+                                    <p><?php echo excerpt(18) ; ?></p>
                                     <p>
                                         <a href="<?php the_permalink(); ?>" class="btn btn-default" rel="bookmark">
                                             learn more
