@@ -24,7 +24,7 @@ get_header(); ?>
                 </div>
             </div>
         </section>
-        <section>
+        <section class="feature-pages">
             <div class="container">
                 <div class="row">
                     <?php
