@@ -5,11 +5,11 @@
  */
 get_header(); ?>
 
-    <main id="main" class="bc-main" role="main">
-        <div id="content" class="bc-content">
+
+        <div id="content" class="content">
             <div class="container">
                 <div class="row">
-                    <div class="col-lg-8">
+                    <div class="col-md-8">
                         <?php while (have_posts()) : the_post(); ?>
                             <article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
                                 <div class="page-header">
@@ -23,16 +23,28 @@ get_header(); ?>
                                     <?php if (have_posts()) : ?>
                                         <?php /* The loop */ ?>
                                         <?php while (have_posts()) : the_post(); ?>
-                                            <div id="post-<?php the_ID(); ?>">
-                                                    <h3 class="entry-title">
+                                            <div id="post-<?php the_ID(); ?>" class="news-item clearfix">
+                                                <div class="col-md-3">
+                                                    <?php if (has_post_thumbnail() && !post_password_required() && !is_attachment()) : ?>
+                                                        <div class="entry-thumbnail">
+                                                            <a href="<?php the_permalink(); ?>">
+                                                                <?php the_post_thumbnail('thumbnail', array('class' => 'img-responsive')); ?>
+                                                            </a>
+                                                        </div>
+                                                    <?php endif; ?>
+                                                </div>
+                                                <div class="col-md-9">
+                                                    <h2 class="entry-title">
                                                         <a href="<?php the_permalink(); ?>" rel="bookmark">
                                                             <?php the_title(); ?>
                                                         </a>
-                                                    </h3>
+                                                    </h2>
                                                     <small><?php the_date('F j, Y'); ?></small>
                                                     <div class="entry-content">
-                                                        <?php the_content(); ?>
+                                                        <?php the_excerpt(); ?>
                                                     </div>
+                                                    <a class="btn btn-default btn-xs pull-right" role="button" href="<?php the_permalink(); ?>">Read more &raquo;</a>
+                                                </div>
                                             </div>
                                         <?php endwhile; ?>
                                     <?php else : ?>
@@ -53,7 +65,7 @@ get_header(); ?>
                 </div>
             </div>
         </div>
-    </main>
+
 
 
 <?php get_footer(); ?>

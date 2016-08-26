@@ -18,7 +18,7 @@ function register_my_menu() {
 // Replaces the excerpt "more" text by a link
 function new_excerpt_more($more) {
     global $post;
-    return '<br><a class="btn btn-default btn-xs" role="button" href="'. get_permalink($post->ID) . '">Read more &raquo;</a>';
+    return '...';
 }
 add_filter('excerpt_more', 'new_excerpt_more');
 
@@ -123,16 +123,9 @@ function meta_boxes() {
             'priority' => 'high',
             'fields' => array(
                 array(
-                    'name' => 'Award image URL',
-                    'desc' => 'For home page only',
-                    'id' => 'award_image',
-                    'type' => 'text',
-                    'std' => ''
-                ),
-                array(
-                    'name' => 'Buy now button URL',
-                    'desc' => 'For wine page only',
-                    'id' => 'buy',
+                    'name' => 'Home page action button',
+                    'desc' => 'Button text to be shown on the home page',
+                    'id' => 'action-button',
                     'type' => 'text',
                     'std' => ''
                 )
@@ -241,4 +234,23 @@ class create_meta_box {
     }
 }
 
+add_action( 'after_setup_theme', 'woocommerce_support' );
+function woocommerce_support() {
+    add_theme_support( 'woocommerce' );
+}
 
+add_action('woocommerce_after_shop_loop_item_title','woocommerce_template_single_excerpt', 5);
+
+
+add_filter( 'woocommerce_product_tabs', 'wcs_woo_remove_reviews_tab', 98 );
+function wcs_woo_remove_reviews_tab($tabs) {
+    unset($tabs['reviews']);
+    return $tabs;
+}
+
+// Change the description tab heading to product name
+add_filter( 'woocommerce_product_description_heading', 'wc_change_product_description_tab_heading', 10, 1 );
+function wc_change_product_description_tab_heading( $title ) {
+    global $post;
+    return $post->post_title;
+}
