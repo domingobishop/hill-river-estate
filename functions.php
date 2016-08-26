@@ -123,16 +123,9 @@ function meta_boxes() {
             'priority' => 'high',
             'fields' => array(
                 array(
-                    'name' => 'Award image URL',
-                    'desc' => 'For home page only',
-                    'id' => 'award_image',
-                    'type' => 'text',
-                    'std' => ''
-                ),
-                array(
-                    'name' => 'Buy now button URL',
-                    'desc' => 'For wine page only',
-                    'id' => 'buy',
+                    'name' => 'Home page action button',
+                    'desc' => 'Button text to be shown on the home page',
+                    'id' => 'action-button',
                     'type' => 'text',
                     'std' => ''
                 )
@@ -143,7 +136,7 @@ function meta_boxes() {
         $home_box = new create_meta_box( $meta_box );
     }
 }
-// add_action( 'init', 'meta_boxes' );
+add_action( 'init', 'meta_boxes' );
 
 // Creates meta boxes from $meta_boxes[] = array()
 // See http://www.deluxeblogtips.com/2010/05/howto-meta-box-wordpress.html for more info

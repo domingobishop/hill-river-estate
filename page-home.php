@@ -52,7 +52,13 @@ get_header(); ?>
                                     <p><?php echo excerpt(18) ; ?></p>
                                     <p>
                                         <a href="<?php the_permalink(); ?>" class="btn btn-default" rel="bookmark">
-                                            learn more
+                                            <?php $action_button = get_post_meta($post->ID, 'action-button', true);
+                                            if ($action_button) {
+                                                echo $action_button;
+                                            } else {
+                                                echo 'learn more';
+                                            }
+                                            ?>
                                         </a>
                                     </p>
                                 </div>
