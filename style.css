@@ -69,6 +69,11 @@ td {
     border-top: 1px solid #ededed;
     padding: 6px 10px 6px 0;
 }
+.btn-default {
+    color: #95a5a6;
+    background-color: transparent;
+    border-color: #95a5a6;
+}
 
 /**
  * Hyphenation
@@ -135,7 +140,6 @@ h1, h2, h3, h4, p, ul, li, ol, dl, blockquote, .post-statement, .statement {
     background: -webkit-linear-gradient(top,  #222222 0%,#333333 50%,#111111 100%); /* Chrome10-25,Safari5.1-6 */
     background: linear-gradient(to bottom,  #222222 0%,#333333 50%,#111111 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
     filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#222222', endColorstr='#111111',GradientType=0 ); /* IE6-9 */
-
     color: #eee;
 }
 
@@ -164,6 +168,25 @@ footer ul {
 }
 footer h3, footer h4 {
     color: #dd3333;
+}
+footer input[type=text] {
+    width: 100% !important;
+    color: #444 !important;
+    border-radius: 4px;
+}
+footer input[type=submit] {
+    width: 200px !important;
+    color: #444 !important;
+    border-radius: 4px;
+}
+footer input[type=submit]:hover {
+    background: #eee;
+}
+footer label {
+    display: none !important;
+}
+footer h4 {
+    font-size: 1.6em !important;
 }
 
 /**
@@ -226,6 +249,67 @@ footer h3, footer h4 {
 .bc-box .btn {
     width: 100%;
 }
+.site-tagline {
+    background: #282a2e;
+    background: -moz-linear-gradient(top,#282a2e 0%,#333333 50%,#282a2e 100%);
+    background: -webkit-linear-gradient(top,#282a2e 0%,#333333 50%,#282a2e 100%);
+    background: linear-gradient(to bottom,#282a2e 0%,#333333 50%,#282a2e 100%);
+    filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#282a2e',endColorstr='#282a2e',GradientType=0);
+    color: #fff;
+    padding: 1.4em 0;
+}
+
+.home-news {
+    border-top: solid 5px #444;
+}
+
+.home-news .container {
+    max-width: 768px;
+}
+
+.home-news article {
+    margin-bottom: 1em;
+}
+
+.intro h1, .bc-box h3, .site-tagline h2, footer h4, footer h3 {
+    font-family: 'Alex Brush', cursive !important;
+}
+
+.intro h1 {
+    font-size: 3.6em !important;
+}
+
+.site-tagline h2 {
+    font-size: 3em !important;
+}
+
+.bc-box h3, footer h3 {
+    font-size: 2.8em !important;
+}
+
+.home-news h3 {
+    margin-top: 0;
+}
+.modal-dialog {
+    z-index: 9999;
+}
+
+.modal-content {
+    background: #222;
+}
+
+.virtual-tour {
+    padding-top: 1em;
+    padding-bottom: 2em;
+    border-bottom: 1px solid #333;
+}
+
+.virtual-tour .btn-default {
+    color: #fff;
+    background-color: #dd3333;
+    border-color: #fff;
+    width: 240px;
+}
 
 
 /**
@@ -239,12 +323,15 @@ footer h3, footer h4 {
 .post .entry-thumbnail {
     margin-bottom: 1.4em;
 }
-
 .news-item {
     margin-bottom: 1.6em;
 }
 .news-item h2 {
     margin-top: 0;
+}
+.entry-content img {
+    max-width: 100%;
+    height: auto;
 }
 
 
@@ -313,11 +400,7 @@ ul.lcp_catlist {
 .wines .entry-content h3 {
     font-size: 1.4em;
 }
-.btn-default {
-    color: #95a5a6;
-    background-color: transparent;
-    border-color: #95a5a6;
-}
+
 
 @media (max-width: 798px) {
     .wines .entry-content h3 {
@@ -376,11 +459,6 @@ ul.lcp_catlist {
     font-weight: 300;
 }
 
-#iconicwines .iconic-product.iconic-wine .iconic-image {
-    max-width: 20% !important;
-    min-width: 15% !important;
-}
-
 /**
 * Woocommerce
 * ----------------------------------------------------------------------------
@@ -425,4 +503,13 @@ ul.lcp_catlist {
     background: -webkit-linear-gradient(top,  #eee 0%,#999 50%,#999 100%); /* Chrome10-25,Safari5.1-6 */
     background: linear-gradient(to bottom,  #eee 0%,#999 50%,#999 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
     filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#eee', endColorstr='#999',GradientType=0 ); /* IE6-9 */
+}
+.woocommerce ul.products li.product .price {
+    color: #000 !important;
+    font-size: 1.2em !important;
+    font-weight: 700 !important;
+}
+
+.woocommerce ul.products li.product a img.logo {
+    max-height: 50px;
 }

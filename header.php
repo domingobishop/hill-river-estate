@@ -16,7 +16,7 @@
 </head>
 
 <body <?php body_class(); ?>>
-    <div class="bg-img">
+<div>
     <header id="head" class="bc-head">
         <div class="bc-banner">
             <div class="container">
