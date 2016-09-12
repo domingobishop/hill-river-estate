@@ -509,7 +509,9 @@ ul.lcp_catlist {
     font-size: 1.2em !important;
     font-weight: 700 !important;
 }
-
 .woocommerce ul.products li.product a img.logo {
     max-height: 50px;
+}
+.woocommerce-page ul.products li.product a > div {
+    min-height: 136px;
 }
