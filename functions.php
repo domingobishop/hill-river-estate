@@ -4,7 +4,7 @@
 function bc_styles() {
     wp_register_style( 'bc-styles', get_template_directory_uri() . '/style.css', array(), 1.0, 'all' );
     wp_register_style( 'google-fonts',
-        'https://fonts.googleapis.com/css?family=Lora:400,700|Droid+Serif:400,700|Open+Sans:400,700,400italic', array(), 1.0, 'all' );
+        'https://fonts.googleapis.com/css?family=Lora:400,700|Alex+Brush|Open+Sans:400,700,400italic', array(), 1.0, 'all' );
     wp_enqueue_style( 'bc-styles' );
     wp_enqueue_style( 'google-fonts' );
 }
@@ -12,7 +12,7 @@ add_action( 'wp_enqueue_scripts', 'bc_styles' );
 
 add_action( 'after_setup_theme', 'register_my_menu' );
 function register_my_menu() {
-  register_nav_menu( 'primary', __( 'Navigation Menu', 'blankcanvas' ) );
+    register_nav_menu( 'primary', __( 'Navigation Menu', 'blankcanvas' ) );
 }
 
 // Replaces the excerpt "more" text by a link
@@ -45,11 +45,11 @@ function bc_wp_title( $title, $sep ) {
 add_filter( 'wp_title', 'bc_wp_title', 10, 2 );
 
 function add_image_responsive_class($content) {
-   global $post;
-   $pattern ="/<img(.*?)class=\"(.*?)\"(.*?)>/i";
-   $replacement = '<img$1class="$2 img-responsive"$3>';
-   $content = preg_replace($pattern, $replacement, $content);
-   return $content;
+    global $post;
+    $pattern ="/<img(.*?)class=\"(.*?)\"(.*?)>/i";
+    $replacement = '<img$1class="$2 img-responsive"$3>';
+    $content = preg_replace($pattern, $replacement, $content);
+    return $content;
 }
 add_filter('the_content', 'add_image_responsive_class');
 
