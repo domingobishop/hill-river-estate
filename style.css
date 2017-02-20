@@ -515,3 +515,6 @@ ul.lcp_catlist {
 .woocommerce-page ul.products li.product a > div {
     min-height: 136px;
 }
+.product_meta, .out-of-stock {
+    display: none;
+}
